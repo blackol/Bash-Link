@@ -69,58 +69,6 @@ struct ListComment {
     int nb_Post ; ;
 };
 
-void affichage_de_connexion(){
-//    Création de la page de garde
-    printf("-----------------------------------------------------------------------------\n");
-    printf("/"); printf("Bienvenue sur Bash Link le reseaux social pour discuter en toute discrétion"); printf("/");
-    printf("\n");
-     printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t S'incrire touche s "); printf("\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\tSe Connecter touche d   ") ;printf("\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("-----------------------------------------------------------------------------\n");
-    }
-    
-void inscriptionPageinterface (){
-    
-}
-
-void connecPageinterface(){
-    
-}
-void pageco(){
-    char choixco = '\0';
-    affichage_de_connexion();
-    
-    
-    switch (choixco) {
-        case 's':
-            inscriptionPageinterface();
-            break;
-        case 'd':
-            connecPageinterface();
-            break;
-        default:
-            break;
-    }
-    
-    
-    
-}
 
 
 int main(int argc, const char * argv[]) {
