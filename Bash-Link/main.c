@@ -7,7 +7,6 @@
 //
 
 
-//Structure de controle des utilisateurs
 
 
 //Structure des utilisateur
@@ -26,7 +25,7 @@ struct Utilisateur {
     int âge;
     Utilisateur * next;
 };
-
+//Structure de controle des utilisateurs
 typedef struct ListUtilisateur ListUser ;
 struct ListUtilisateur {
     Utilisateur *tete ;
@@ -43,7 +42,7 @@ struct post{
     int id_post_writer ;
     Post *next;
 };
-
+// Structure de Contôle des post
 typedef struct ListPost ListPost ;
 struct ListPost {
     Post *tete ;
@@ -60,7 +59,7 @@ struct comment{
     int id_post ;
     Post *next;
 };
-
+// Structure de Contrôle des commentaire
 typedef struct List ListComment ;
 struct ListComment {
     Post *tete ;
