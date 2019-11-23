@@ -95,8 +95,28 @@ void affichage_de_connexion(){
     printf("-----------------------------------------------------------------------------\n");
     }
     
+void inscriptionPageinterface (){
+    
+}
 
+void connecPageinterface(){
+    
+}
 void pageco(){
+    char choixco = '\0';
+    affichage_de_connexion();
+    
+    
+    switch (choixco) {
+        case 's':
+            inscriptionPageinterface();
+            break;
+        case 'd':
+            connecPageinterface();
+            break;
+        default:
+            break;
+    }
     
     
     
