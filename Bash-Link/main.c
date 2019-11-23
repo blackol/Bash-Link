@@ -4,7 +4,8 @@
 //  main.c
 //  Bash-Link
 //  Created by Anthony Colvil on 21/11/2019.
-//  Copyright © 2019 Anthony Colvil and Boris Abisur and Cédric Lipau. All rights reserved.
+//  Copyright © 2019 Anthony Colvil and Boris Abisur and Cédric Lipau
+//Allan . All rights reserved.
 //
 
 
@@ -68,13 +69,39 @@ struct ListComment {
     int nb_Post ; ;
 };
 
-
+void menu(){
+//    Création de la page de garde
+    printf("-----------------------------------------------------------------------------\n");
+    printf("/"); printf("Bienvenue sur Bash Link le reseaux social pour discuter en toute discrétion"); printf("/");
+    printf("\n");
+     printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("/"); printf("\t S'incrire touche s "); printf("\t\t/");
+       printf("\n");
+    printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("/"); printf("\tSe Connecter touche d   ") ;printf("\t/");
+       printf("\n");
+    printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("/");printf("\t\t\t\t\t\t\t\t/");
+       printf("\n");
+    printf("-----------------------------------------------------------------------------\n");
+    
+}
 
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
-    printf("c'est bon");
+    printf("c'est bon\n");
+    menu();
     return 0;
 }
 
