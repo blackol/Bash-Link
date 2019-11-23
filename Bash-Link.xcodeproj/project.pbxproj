@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		0D6F82762387627E00235224 /* Bash-Link */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bash-Link"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6F82792387627E00235224 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0DF8F6AE2389726200B4E118 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				0D6F82792387627E00235224 /* main.c */,
+				0DF8F6AE2389726200B4E118 /* Header.h */,
 			);
 			path = "Bash-Link";
 			sourceTree = "<group>";

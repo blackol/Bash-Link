@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include "Header.h"
 //
 //  main.c
 //  Bash-Link
 //  Created by Anthony Colvil on 21/11/2019.
-//  Copyright © 2019 Anthony Colvil. All rights reserved.
+//  Copyright © 2019 Anthony Colvil and Boris Abisur and Cédric Lipau. All rights reserved.
 //
 
 
