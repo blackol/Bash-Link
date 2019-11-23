@@ -69,7 +69,7 @@ struct ListComment {
     int nb_Post ; ;
 };
 
-void menu(){
+void affichage_de_connexion(){
 //    Création de la page de garde
     printf("-----------------------------------------------------------------------------\n");
     printf("/"); printf("Bienvenue sur Bash Link le reseaux social pour discuter en toute discrétion"); printf("/");
@@ -93,6 +93,12 @@ void menu(){
     printf("/");printf("\t\t\t\t\t\t\t\t/");
        printf("\n");
     printf("-----------------------------------------------------------------------------\n");
+    }
+    
+
+void pageco(){
+    
+    
     
 }
 
@@ -101,7 +107,7 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
     printf("c'est bon\n");
-    menu();
+    pageco();
     return 0;
 }
 
