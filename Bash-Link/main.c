@@ -74,6 +74,7 @@ struct ListComment {
 int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
+    printf("c'est bon");
     return 0;
 }
 
