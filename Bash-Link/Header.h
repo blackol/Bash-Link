@@ -4,7 +4,7 @@
 //
 //  Created by Anthony Colvil on 23/11/2019.
 //  Copyright © 2019 Anthony Colvil. All rights reserved.
-//
+//version du 24 nov 00h52
 
 #ifndef Header_h
 #define Header_h
