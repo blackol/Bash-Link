@@ -25,6 +25,12 @@
 /* Begin PBXFileReference section */
 		0D6F82762387627E00235224 /* Bash-Link */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bash-Link"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6F82792387627E00235224 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0DC381D0238B2B9400B2C319 /* FonctionCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FonctionCustom.h; sourceTree = "<group>"; };
+		0DC381D1238B2DEB00B2C319 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		0DC381D2238B2DF200B2C319 /* Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interface.h; sourceTree = "<group>"; };
+		0DC381D3238B2DFC00B2C319 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0DC381D4238B2E0300B2C319 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		0DC381D5238B2E0C00B2C319 /* Save.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Save.h; sourceTree = "<group>"; };
 		0DF8F6AE2389726200B4E118 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +64,12 @@
 		0D6F82782387627E00235224 /* Bash-Link */ = {
 			isa = PBXGroup;
 			children = (
+				0DC381D5238B2E0C00B2C319 /* Save.h */,
+				0DC381D4238B2E0300B2C319 /* Post.h */,
+				0DC381D3238B2DFC00B2C319 /* User.h */,
+				0DC381D2238B2DF200B2C319 /* Interface.h */,
+				0DC381D1238B2DEB00B2C319 /* Comment.h */,
+				0DC381D0238B2B9400B2C319 /* FonctionCustom.h */,
 				0D6F82792387627E00235224 /* main.c */,
 				0DF8F6AE2389726200B4E118 /* Header.h */,
 			);
