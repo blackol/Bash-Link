@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib>
-
 typedef struct Utilisateur Utilisateur;
 struct Uti{
 	char *nom;
@@ -12,36 +11,24 @@ struct Uti{
 	char *question2;
 	Utilisateur *suivant;
 };
-
 typedef struct List List;
 struct List{
-
 	Utilisateur contenu;
 };
-
-
 int hachage(char *tableau)
 {
  int i = 0, nombreHache = 0;
-
     for (i = 0 ; chaine[i] != '\0' ; i++)
     {
         nombreHache += chaine[i];
     }
     nombreHache %= 100;
-
     return nombreHache;
 }
-
-
-
-
-
 int pagedaccueil(int choixMenu)
 {
 	int choixMenu;
 	List liste;	
-
 	printf("-----------Bienvenue sur BashLink---------------------\n");	  
 	printf("\n");
 	printf("\n");
@@ -68,24 +55,19 @@ int pagedaccueil(int choixMenu)
 		connexion(liste);
 		
 	}
-
 Liste *initialisation()
 {
     List *liste = malloc(sizeof(*liste));
     Utilisateur *element = malloc(sizeof(*element));
-
     if (liste == NULL || element == NULL)
     {
         exit(EXIT_FAILURE);
     }
-
     element->nombre = 0;
     element->suivant = NULL;
     liste->premier = element;
-
     return liste;
 }
-
 void ajoutUti(Liste *liste){
 	Utilisateur *a=malloc(sizeof(Utilisateur));
 	int qt1,qt2;
@@ -124,7 +106,6 @@ void ajoutUti(Liste *liste){
 	printf("10:Votre animal préférée");
 	scanf("%d",&qt1);
 	scanf("%d",&qt2);
-
 	//question 1
 	if(qt1==1){
 		a->question1=[Nom de jeune fille de votre mère];
@@ -195,13 +176,11 @@ void ajoutUti(Liste *liste){
 void connexion(Liste *liste){
 	Utilisateur *b=malloc(sizeof(Utilisateur));
 	Utilisateur *c=malloc(sizeof(Utilisateur));
-
 	b=liste->premier;
 	printf("Login");
 	scanf("%s",b->login);
 	printf("Mot de Passe");
 	scanf("%s",b->mdp);
-
 	if(b->login==liste->premier->login && b->mdp==liste->premier->mdp){
 		Menu();
 	}else{
