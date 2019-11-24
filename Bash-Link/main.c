@@ -75,7 +75,12 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
     printf("c'est bon\n");
-    pageco();
+//    pageco();
+    neww();
+    see();
+    printf("oups\n");
+    vog();
+
     return 0;
 }
 
