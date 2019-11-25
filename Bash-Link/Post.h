@@ -139,7 +139,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 }
 
 
-
+// modifier les post
 
 /**
 
@@ -165,7 +165,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
 
 
     }}
-
+//suppreimer les post
 
 
   int supprimerPost( ListPost *list , int id_post , char *post){

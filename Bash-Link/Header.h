@@ -20,7 +20,7 @@
  char saisieUser;
  const char *a;
  int z;
-
+// ancienne fonction s'inscrire
  void neww(){
 
      char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
@@ -56,7 +56,7 @@
     fclose(P_FICHIER);
  }
 
-
+// fonction qui affiche le contenue d'un fichiers celui de l'utilisateur (ancine code à supprimer)
 
  void ee(){
 
@@ -89,7 +89,7 @@
      }
      fclose(P_FICHIER);
  }
-
+// ancien affichage du profil de l'utilisateur
 
  void vog(){
 
@@ -151,7 +151,7 @@ void affichage_de_connexion(){
        printf("\n");
     printf("-----------------------------------------------------------------------------\n");
     }
-
+// fonction à supprimer ou garder pas sûr
 void inscriptionPageinterface (){
 
 }
@@ -189,7 +189,7 @@ void pageco(){
 
 }
 // Nouveau code
-
+// nouveau code pour incrire les menbres
 void INSCRIPTION(){
 
     char choix1 [ ] = "Quel est le nom de jeune fille de votre mère ?";
@@ -268,7 +268,7 @@ void INSCRIPTION(){
     MENU();
  }
 
-
+// afficher 1 utilisateur fonction à debuguer
 
  void AFFICHER(){
      
@@ -302,6 +302,7 @@ void INSCRIPTION(){
     fclose(fichier);
 }
 
+// connexion d'un utilisateur par rapport au son login(nouveau code)
 
 void CONNEXION(){
     char LOGIN[30],NOM[30],PRENOM[30],AGE[10],MDP[30],MDP_TMP[30];
@@ -355,7 +356,7 @@ void EN_TETE(){
 }
 
 
-
+// Inter face de la apge de co
 
 
 void INTERFACE(int etat){
@@ -382,13 +383,14 @@ void INTERFACE(int etat){
     }
     EN_TETE();
 }
+//                       nouvelle fonction super menu a intégrer
 
 void SUPER_MENU(){
     EN_TETE();
     EN_TETE();
 
 }
-
+// Menu de page de présentation
 
 void MENU(){
     int ETAT=0;

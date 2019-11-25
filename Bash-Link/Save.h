@@ -3,7 +3,7 @@
 #include <string.h>
 #include "FonctionCustom.h"
 
-
+// sauvegarde des post 
 int savePost( int id_post , int id_post_writer , char *post ){
 
     //les id sont stocké sur 3 caractères

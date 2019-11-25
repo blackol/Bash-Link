@@ -28,7 +28,7 @@ void affichageSupermenu(){
          printf("\n");
       printf("-----------------------------------------------------------------------------\n");
 }
-
+// affichage du menu graphique
 void affichageselectsupermenu(){
     printf("-----------------------------------------------------------------------------\n");
       printf("/"); printf("Bash-Link made in G3 in fouillole (Des étudiant sont morts )"); printf("\t\t\t\t/");
@@ -55,6 +55,7 @@ void affichageselectsupermenu(){
          printf("\n");
       printf("-----------------------------------------------------------------------------\n");
 }
+// super menu toute les fonction du duper menu son à faire 
 void superMenu(){
     int choix = 0,choixsuperm=0;
     affichageSupermenu();

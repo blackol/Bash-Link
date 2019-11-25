@@ -29,6 +29,7 @@ ListComment initListComment(void){
 
 }
 
+// ajouter des commentaire dans une structure
 
 int ajouterComment(ListComment *list , Post *post , char *comment ){
 
@@ -56,7 +57,7 @@ int ajouterComment(ListComment *list , Post *post , char *comment ){
         return 1 ;
 
       }
-
+//sauvegarder dans le fichier commentaire 
         FILE *fichier = fopen("comment.txt" , "a+") ;
 
         char chaine[500] ;
