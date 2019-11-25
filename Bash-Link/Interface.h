@@ -28,20 +28,36 @@ void affichageSupermenu(){
          printf("\n");
       printf("-----------------------------------------------------------------------------\n");
 }
+
+void affichageselectsupermenu(){
+    printf("en construction");
+}
 void superMenu(){
-    int choix = 0;
+    int choix = 0,choixsuperm=0;
     affichageSupermenu();
     scanf("%d",&choix);
     
-//    if (choix==1) {
-//        <#statements#>
-//    }
-//    if (choix==2) {
-//        <#statements#>
-//    }
-//    if (choix==3) {
-//        <#statements#>
-//    }
+    if (choix==1) {
+        while (choixsuperm!=9) {
+             affichageselectsupermenu();
+            scanf("%d",&choixsuperm);
+            if (choixsuperm==1) {
+                 printf("en construction");
+            }
+            if (choixsuperm==2) {
+                printf("en construction");
+            }
+            if (choixsuperm==3) {
+                printf("en construction");
+            }
+        }
+    }
+    if (choix==2) {
+        printf("en construction");
+    }
+    if (choix==3) {
+        printf("en construction");
+    }
     // copyright by G3
 }
 #endif
