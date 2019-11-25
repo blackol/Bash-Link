@@ -15,6 +15,7 @@ int main(int argc, const char * argv[]) {
     // a intégrer dans le menu de co
 //    superMenu();
      pageco();
+    MENU();
 
     return 0;
 }
