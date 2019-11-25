@@ -16,11 +16,11 @@ void affichageSupermenu(){
          printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
-      printf("/"); printf("\t\t\t\t\t\t\t2 Faire une recherche  ") ;printf("\t\t\t\t\t\t\t/");
+    printf("/"); printf("\t\t\t\t\t\t\t");printf("2 Faire une recherche ") ;printf("\t\t\t\t\t\t\t/");
          printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
-      printf("/"); printf("\t\t\t\t\t\t\t"); printf("Sugetion d'amis");printf("\t\t\t\t\t\t\t/");
+      printf("/"); printf("\t\t\t\t\t\t\t"); printf("1 Sugetion d'amis");printf("\t\t\t\t\t\t\t/");
             printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
