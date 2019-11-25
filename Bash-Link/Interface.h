@@ -15,6 +15,7 @@ void affichageSupermenu(){
       printf("/"); printf("\t\t\t\t\t\t 1 afficher le fils d'actualié "); printf("\t\t\t\t\t\t/");
          printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+    
          printf("\n");
       printf("/"); printf("\t\t\t\t\t\t\t2 Faire une recherche  ") ;printf("\t\t\t\t\t\t\t/");
          printf("\n");
