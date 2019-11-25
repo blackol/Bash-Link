@@ -1,3 +1,6 @@
+#include "FonctionCustom.h"
+
+
 /**
 
 Bon voila il propose une structure de fichier pour pouvoir faire le Projet
@@ -5,9 +8,6 @@ Bon voila il propose une structure de fichier pour pouvoir faire le Projet
 A faire :
 
   Pour le design : fonctions affichePost
-
-
-
 
 */
 
@@ -22,6 +22,9 @@ struct ListPost {
     int nb_post ;
 };
 
+//Structure de donné sera une liste double chainé circiulaire
+// cette strcuture de donné servira de fil d'actualié
+
 // poste d'utilisateur
 typedef struct post Post;
 struct post{
@@ -32,11 +35,11 @@ struct post{
     Post *next;
 };
 
-ListPost initListPost(void){
+ListPost initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
 
-  ListPost liste = malloc_p(sizeof(ListPost) ) ;
 
-}
+
+
 
 
 /** Cette fonction retourn 0 si la liste n'existe pas  et 1 si l'ajout c'est bien effectuer
@@ -59,19 +62,16 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     newPost.post = post ;
     newPost.id_post_writer = usr->id ;
-    newPost.next = NULL ;
-
-
-
 
 
     if (list->tete == NULL) {
 
-
-        newPost.id_post = 0 ;
-        newPost.last = NULL ;
         list->tete = &newPost ;
         list-> queue = &newPost ;
+        newPost.id_post = 0 ;
+        newPost.last = list->queue ;
+
+        newPost.next = list->tete ;
 
         savePost(newPost.id_post , usr->id , newPost.post ) ;
 
@@ -79,11 +79,28 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     }
 
+    FILE *fichier = fopen("post.txt" , "a+") ;
 
-    newPost.id_post = list->queue->id_post ++ ;
+    char chaine[500] ;
+
+    char precedent[500] ;
+
+    int id_post ;
+
+    while((chaine = fgets(fichier) )!= EOF ){
+      strcpy(chaine , precedent) ; }
+
+    sscanf(precedent , "%d" , &id_post);
+
+    newPost.id_post = id_post++ ;
+
     list->queue->next = &newPost ;
+
     newPost.last = list->queue ;
+
     list-> queue = &newPost ;
+
+    newPost.next = list->tete ;
 
     savePost(newPost.id_post , usr->id , newPost.post ) ;
     return 1 ;
