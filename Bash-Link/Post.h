@@ -9,6 +9,15 @@ A faire :
 
   Pour le design : fonctions affichePost
 
+<<<<<<< HEAD
+=======
+
+
+// copyright by G3
+ // copyright by G3
+ // copyright by G3
+ // copyright by G3
+>>>>>>> 7e4a0b85efd199a7237cc986db02b97675318c58
 */
 
 
