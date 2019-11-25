@@ -43,12 +43,15 @@ void superMenu(){
             scanf("%d",&choixsuperm);
             if (choixsuperm==1) {
                  printf("en construction");
+//                ajoutpost
             }
             if (choixsuperm==2) {
                 printf("en construction");
+//                modipost
             }
             if (choixsuperm==3) {
                 printf("en construction");
+//                supppost
             }
         }
     }
