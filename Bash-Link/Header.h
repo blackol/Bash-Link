@@ -8,6 +8,7 @@
 
 #ifndef Header_h
 #define Header_h
+#include "Post.h"
 #include "Interface.h"
 
 // gestion des fichiers pour la sauvegarde______________

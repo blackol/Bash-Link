@@ -1,7 +1,9 @@
+#ifndef User_h
+#define User_h
 //Structure des utilisateur
 typedef struct Utilisateur User;
-struct Utilisateur {
-    Utilisateur * last;
+struct User {
+    User * last;
     char login[51];
     int id ;
     char motsPasse[51];
@@ -51,3 +53,4 @@ User chercherUser(char *recherche){
 
 
 }
+#endif

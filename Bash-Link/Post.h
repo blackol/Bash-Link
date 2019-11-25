@@ -1,5 +1,8 @@
-#include "FonctionCustom.h"
 
+#ifndef Post_h
+#define Post_h
+#include "FonctionCustom.h"
+#include "User.h"
 
 /**
 
@@ -22,6 +25,16 @@ A faire :
 
 
 
+// poste d'utilisateur
+typedef struct post Post;
+struct post{
+    Post* last;
+    char *post;
+    int id_post;
+    int id_post_writer ;
+    Post *next;
+};
+
 
 // Structure de Contôle des post
 typedef struct ListPost ListPost ;
@@ -34,6 +47,7 @@ struct ListPost {
 //Structure de donné sera une liste double chainé circiulaire
 // cette strcuture de donné servira de fil d'actualié
 
+<<<<<<< HEAD
 // poste d'utilisateur
 typedef struct post Post;
 struct post{
@@ -43,8 +57,11 @@ struct post{
     int id_post_writer ;
     Post *next ;
 };
+=======
+>>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
 
-ListPost initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
+
+ListPost * initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
 
 
 
@@ -96,12 +113,17 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     int id_post ;
 
+<<<<<<< HEAD
     while(fgets(chaine ,500,fichier) != EOF ){
+=======
+    while( fgets( chaine  ,500,fichier) != EOF ){
+>>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
       strcpy(chaine , precedent) ; }
 
     sscanf(precedent , "%d" , &id_post);
 
     newPost.id_post = id_post++ ;
+      
 
     list->queue->next = &newPost ;
 
@@ -201,3 +223,4 @@ int modifierPost( ListPost *list , int id_post , char *post){
     }
 
   }
+#endif
