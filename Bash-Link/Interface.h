@@ -12,7 +12,7 @@ void affichageSupermenu(){
          printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
-      printf("/"); printf("\t\t\t\t\t\t 1 afficher le fils d'actualié "); printf("\t\t\t\t\t\t/");
+    printf("/"); printf("\t\t\t\t\t\t");printf("1 afficher le fils d'actualié") ;printf("\t\t\t\t\t\t/");
          printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
@@ -30,7 +30,30 @@ void affichageSupermenu(){
 }
 
 void affichageselectsupermenu(){
-    printf("en construction");
+    printf("-----------------------------------------------------------------------------\n");
+      printf("/"); printf("Bash-Link made in G3 in fouillole (Des étudiant sont morts )"); printf("\t\t\t\t/");
+      printf("\n");
+       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+      printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+      printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+    printf("/"); printf("\t\t\t\t\t\t");printf("1 ajouter un post") ;printf("\t\t\t\t\t\t/");
+         printf("\n");
+      printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+    printf("/"); printf("\t\t\t\t\t\t\t");printf("2 modifier un post ") ;printf("\t\t\t\t\t\t\t/");
+         printf("\n");
+      printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+      printf("/"); printf("\t\t\t\t\t\t\t"); printf("1 supprimer un post");printf("\t\t\t\t\t\t\t/");
+            printf("\n");
+      printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+      printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
+         printf("\n");
+      printf("-----------------------------------------------------------------------------\n");
 }
 void superMenu(){
     int choix = 0,choixsuperm=0;
