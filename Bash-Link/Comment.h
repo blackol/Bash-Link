@@ -1,3 +1,6 @@
+
+#ifndef Comment_h
+#define Commen_h
 // commentaire d'utilisateur
 typedef struct comment Comment;
 struct comment{
@@ -15,3 +18,6 @@ struct ListComment {
     Post *queue ;
     int nb_Post ; ;
 };
+
+
+#endif

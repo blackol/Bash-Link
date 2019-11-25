@@ -8,6 +8,7 @@
 
 #ifndef Header_h
 #define Header_h
+#include "Interface.h"
 
 // gestion des fichiers pour la sauvegarde______________
  FILE *P_FICHIER; /* pointeur sur FILE */
@@ -44,11 +45,11 @@
          scanf("%s", AGE);
          fprintf(P_FICHIER,"%s\n",AGE);
 
-         printf("Entrez votre mot de passe : ");
+     printf("Entrez votre mot de passe : ");
          scanf("%s", mdp);
          fprintf(P_FICHIER, "%s\n", mdp);
-
-     C=1;
+        
+         C=1;
 
       }
     fclose(P_FICHIER);
@@ -97,7 +98,7 @@
      scanf("%s", NOM_FICHIER);
 
      P_FICHIER = fopen(NOM_FICHIER, "r");
-     fgets(NOM_PERS,30,P_FICHIER);
+    fgets(NOM_PERS,30,P_FICHIER);
      fgets(PRENOM_PERS,30,P_FICHIER);
      fgets(AGE,30,P_FICHIER);
      fgets(mdp,30,P_FICHIER);
@@ -157,6 +158,8 @@ void inscriptionPageinterface (){
 void connecPageinterface(){
     
 }
+
+
 void pageco(){
     int choixco=0;
     
@@ -169,14 +172,18 @@ void pageco(){
             ee();
         }
         
-        if (choixco==2) {
+        else if (choixco==2) {
             vog();
+            superMenu();
         }
         
-        if (choixco==3) {
+        else if (choixco==3) {
             printf("pas encore intégrer");
         }
         
+        if (choixco==9)
+            {
+                            }
     }
     
 }
