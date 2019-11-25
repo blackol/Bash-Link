@@ -1,4 +1,4 @@
-#ifndef Uer_h
+#ifndef User_h
 #define User_h
 //Structure des utilisateur
 typedef struct Utilisateur User;
