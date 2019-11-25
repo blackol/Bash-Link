@@ -1,6 +1,6 @@
 /**
 
-Bon voila il propose une structure de fichier pour pouvoir faire le Projet  
+Bon voila il propose une structure de fichier pour pouvoir faire le Projet
 
 A faire :
 
@@ -32,7 +32,11 @@ struct post{
     Post *next;
 };
 
-ListPost initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
+ListPost initListPost(void){
+
+  ListPost liste = malloc_p(sizeof(ListPost) ) ;
+
+}
 
 
 /** Cette fonction retourn 0 si la liste n'existe pas  et 1 si l'ajout c'est bien effectuer
@@ -69,6 +73,8 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
         list->tete = &newPost ;
         list-> queue = &newPost ;
 
+        savePost(newPost.id_post , usr->id , newPost.post ) ;
+
         return 1 ;
 
     }
@@ -79,7 +85,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
     newPost.last = list->queue ;
     list-> queue = &newPost ;
 
-
+    savePost(newPost.id_post , usr->id , newPost.post ) ;
     return 1 ;
   }
 }
