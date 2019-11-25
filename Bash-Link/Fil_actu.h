@@ -23,6 +23,21 @@ A faire :
 
 
 
+
+
+//Structure de donné sera une liste double chainé circiulaire
+// cette strcuture de donné servira de fil d'actualié
+
+// poste d'utilisateur
+typedef struct post Post;
+struct post{
+    Post* last;
+    char *post;
+    int id_post;
+    int id_post_writer ;
+    Post *next;
+};
+
 // Structure de Contôle des post
 typedef struct ListPost ListPost ;
 struct ListPost {
@@ -31,20 +46,7 @@ struct ListPost {
     int nb_post ;
 };
 
-//Structure de donné sera une liste double chainé circiulaire
-// cette strcuture de donné servira de fil d'actualié
-
-// poste d'utilisateur
-typedef struct post Post;
-struct post{
-    Post* last ;
-    char *post ;
-    int id_post ;
-    int id_post_writer ;
-    Post *next ;
-};
-
-ListPost initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
+ListPost * initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
 
 
 
@@ -96,7 +98,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     int id_post ;
 
-    while(fgets(chaine ,500,fichier) != EOF ){
+    while((chaine = fgets(fichier) )!= EOF ){
       strcpy(chaine , precedent) ; }
 
     sscanf(precedent , "%d" , &id_post);
@@ -115,9 +117,6 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
     return 1 ;
   }
 }
-
-
-
 
 /**
 
@@ -187,7 +186,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
 
 
       }
-
+      
       //si il faut supprimer le dernier élément
       if(p->id_post == id_post){
 
