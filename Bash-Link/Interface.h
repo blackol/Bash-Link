@@ -20,7 +20,7 @@ void affichageSupermenu(){
          printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
-      printf("/"); printf("\t\t\t\t\t\t\t3 Sugestion d'amis   ") ;printf("\t\t\t\t\t\t\t/");
+      printf("/"); printf("\t\t\t\t\t\t\t"); printf("Sugetion d'amis");printf("\t\t\t\t\t\t\t/");
             printf("\n");
       printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
          printf("\n");
@@ -33,15 +33,15 @@ void superMenu(){
     affichageSupermenu();
     scanf("%d",&choix);
     
-    if (choix==1) {
-        <#statements#>
-    }
-    if (choix==2) {
-        <#statements#>
-    }
-    if (choix==3) {
-        <#statements#>
-    }
+//    if (choix==1) {
+//        <#statements#>
+//    }
+//    if (choix==2) {
+//        <#statements#>
+//    }
+//    if (choix==3) {
+//        <#statements#>
+//    }
     // copyright by G3
 }
 #endif

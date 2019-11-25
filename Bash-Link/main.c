@@ -13,8 +13,8 @@
 
 int main(int argc, const char * argv[]) {
     // a intégrer dans le menu de co
-    superMenu();
-//    pageco();
+//    superMenu();
+     pageco();
 
     return 0;
 }
