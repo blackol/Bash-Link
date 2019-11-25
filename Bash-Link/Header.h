@@ -13,7 +13,7 @@
 
 // gestion des fichiers pour la sauvegarde______________
  FILE *P_FICHIER; /* pointeur sur FILE */
-   
+
 
  int  C,NB_ENREG;
 
@@ -27,21 +27,21 @@
      printf("Entrez le new login: ");
      scanf("%s", NOM_FICHIER);
      P_FICHIER = fopen(NOM_FICHIER, "a");
-     
+
      NB_ENREG=1;C = 0;
 
      while (C<NB_ENREG){
 
-           
+
 
      printf("Entrez le nom de la personne : ");
          scanf("%s", NOM_PERS);
          fprintf(P_FICHIER, "%s\n", NOM_PERS);
-         
+
      printf("Entrez le prenom de la personne : ");
          scanf("%s", PRENOM_PERS);
          fprintf(P_FICHIER,"%s\n",PRENOM_PERS);
-         
+
      printf("Votre age : ");
          scanf("%s", AGE);
          fprintf(P_FICHIER,"%s\n",AGE);
@@ -49,7 +49,7 @@
      printf("Entrez votre mot de passe : ");
          scanf("%s", mdp);
          fprintf(P_FICHIER, "%s\n", mdp);
-        
+
          C=1;
 
       }
@@ -59,16 +59,16 @@
 
 
  void ee(){
-     
+
      char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
-     
+
      printf("consulter : ");
      scanf("%s", NOM_FICHIER);
 
      P_FICHIER = fopen(NOM_FICHIER, "r");
 
      while (!feof(P_FICHIER)){
-         
+
      fscanf(P_FICHIER, "%s", NOM_PERS);
      fscanf(P_FICHIER, "\n");
          printf("NOM : %s\n", NOM_PERS);
@@ -92,25 +92,25 @@
 
 
  void vog(){
-     
+
      char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10],MDP_TMP[30];
      int z=1;
      printf("LOGIN : ");
      scanf("%s", NOM_FICHIER);
 
-     P_FICHIER = fopen(NOM_FICHIER, "r");
+      P_FICHIER = fopen(NOM_FICHIER, "r");
     fgets(NOM_PERS,30,P_FICHIER);
      fgets(PRENOM_PERS,30,P_FICHIER);
      fgets(AGE,30,P_FICHIER);
      fgets(mdp,30,P_FICHIER);
-     
+
      printf("MOT DE PASSE : ");
      scanf("%s",MDP_TMP);
      z=strcmp(mdp,MDP_TMP);
 
      if (z==10){
              printf("CONNECTER \n");
-            
+
      }
      else{
          printf("ERREUR MOT DE PASSE\n");
@@ -151,42 +151,42 @@ void affichage_de_connexion(){
        printf("\n");
     printf("-----------------------------------------------------------------------------\n");
     }
-    
+
 void inscriptionPageinterface (){
-    
+
 }
 
 void connecPageinterface(){
-    
+
 }
 
 
 void pageco(){
     int choixco=0;
-    
+
     while (choixco!=9) {
         affichage_de_connexion();
         scanf("%d",&choixco);
-        
+
         if (choixco==1) {
             neww();
             ee();
         }
-        
+
         else if (choixco==2) {
             vog();
             superMenu();
         }
-        
+
         else if (choixco==3) {
             printf("pas encore intégrer");
         }
-        
+
         if (choixco==9)
             {
                             }
     }
-    
+
 }
 // Nouveau code
 

@@ -26,12 +26,30 @@ struct ListUtilisateur {
 };
 
 
-int chercherUser(){
+User chercherUser(char *recherche){
 
 
-  //à finir 
-  FILE *file  = fopen("User.txt" , "a+") ;
+  //à finir
+  FILE *file  = fopen("User.txt" , "a+");
+  char ligne[500] ;
+  int id ;
+  char nom[51];
+  char prenom[51] ;
+  char login[51] ;
+  while ( fgets(line , 500 ,file)!= EOF) {
+     sscanf(ligne , "%d %s %s %s", &id, nom ,prenom , login  ) ;
+     if( (strcmp(recherche , nom) == 0 ) || (strcmp(recherche , prenom) == 0) || (strcmp(recherche , login) == 0) ){
 
+       User usr ;
+
+       usr.nom = nom ;
+       usr.prenom = prenom ;
+       usr.login = login ;
+
+       return usr ;
+     }
+
+  }
 
 
 }

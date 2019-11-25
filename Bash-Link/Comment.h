@@ -1,6 +1,6 @@
 
-#ifndef Comment_h
-#define Commen_h
+#ifndef COMMENT_H
+#define COMMENT_H
 
 #include "FonctionCustom.h"
 
@@ -82,11 +82,7 @@ int ajouterComment(ListComment *list , Post *post , char *comment ){
 
     }
 
-
-
-
-
-
+    // à finir
 }
 
 
