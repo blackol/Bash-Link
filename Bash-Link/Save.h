@@ -3,14 +3,14 @@
 #include <string.h>
 #include "FonctionCustom.h"
 
-// sauvegarde des post 
+// sauvegarde des post
 int savePost( int id_post , int id_post_writer , char *post ){
 
     //les id sont stocké sur 3 caractères
 
 
     char chaine[500] ;
-
+    
     FILE  *file =  fopen("post.txt" , "a+") ;
     if(file == NULL) { return 0 ; }
 

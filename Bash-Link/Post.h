@@ -95,9 +95,9 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
         list->tete = &newPost ;
         list-> queue = &newPost ;
         newPost.id_post = 0 ;
-        newPost.last = list->queue ;
+        newPost.last = NULL  ;
 
-        newPost.next = list->tete ;
+        newPost.next = NULL ;
 
         savePost(newPost.id_post , usr->id , newPost.post ) ;
 
@@ -113,17 +113,17 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     int id_post ;
 
-<<<<<<< HEAD
-    while(fgets(chaine ,500,fichier) != EOF ){
-=======
+    /**
     while( fgets( chaine  ,500,fichier) != EOF ){
->>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
+
       strcpy(chaine , precedent) ; }
 
     sscanf(precedent , "%d" , &id_post);
 
     newPost.id_post = id_post++ ;
-      
+    */
+
+    newPost.id_post = dernier_id("post") ++ ;
 
     list->queue->next = &newPost ;
 
@@ -131,7 +131,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     list-> queue = &newPost ;
 
-    newPost.next = list->tete ;
+    newPost.next = NULL ;
 
     savePost(newPost.id_post , usr->id , newPost.post ) ;
     return 1 ;
@@ -139,7 +139,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 }
 
 
-// modifier les post
+
 
 /**
 
@@ -165,7 +165,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
 
 
     }}
-//suppreimer les post
+
 
 
   int supprimerPost( ListPost *list , int id_post , char *post){
@@ -198,6 +198,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
 
             Post *tmp =  p-> next ;
             p->next = p->next->next ;
+            p->next->last = p ;
 
             free(tmp) ;
 

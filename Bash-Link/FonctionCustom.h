@@ -16,12 +16,12 @@ void* malloc_p(unsigned int s){
 <<<<<<< HEAD
 
 int dernier_id(char *chaine){
-/**
+  /**
 
-passer le nom du fichier en paramètre sans le ".txt"
+  passer le nom du fichier en paramètre sans le ".txt"
 
-*/
-  chaine = realloc(chaine , sizeof(char)* (strlen(chaine) + 4)) ;
+  */
+  chaine = realloc(chaine , sizeof(char)* (strlen(chaine) + 5)) ;
   strcat(chaine , ".txt") ;
 
   FILE *file = fopen(chaine , "a+" ) ;
@@ -41,6 +41,7 @@ passer le nom du fichier en paramètre sans le ".txt"
     return id_post ;
 
 }
+
 =======
 #endif
 >>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
