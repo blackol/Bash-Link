@@ -47,25 +47,14 @@ struct ListPost {
 //Structure de donné sera une liste double chainé circiulaire
 // cette strcuture de donné servira de fil d'actualié
 
-<<<<<<< HEAD
-// poste d'utilisateur
-typedef struct post Post;
-struct post{
-    Post* last ;
-    char *post ;
-    int id_post ;
-    int id_post_writer ;
-    Post *next ;
-};
-=======
->>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
-
 
 ListPost * initListPost(void){
 
   ListPost *l = (ListPost *) malloc_p(sizeof(ListPost) ) ;
 
   l->nb_post = 0 ;
+    
+    return l ; 
 
   }
 

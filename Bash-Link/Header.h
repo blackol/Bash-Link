@@ -311,7 +311,7 @@ void CONNEXION(){
     fichier = fopen("User","r");
     
     printf("ENTREZ VOTRE LOGIN : ");
-    scanf("%s", LOGIN[);
+    scanf("%s", LOGIN);
    
     
     while(!fichier && ESSAI<3){
