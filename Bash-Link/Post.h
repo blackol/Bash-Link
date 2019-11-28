@@ -54,7 +54,7 @@ ListPost * initListPost(void){
 
   l->nb_post = 0 ;
     
-    return l ; 
+    return l ;
 
   }
 
@@ -80,8 +80,7 @@ int ajouterPost(ListPost *list , int id_user , int id_post , char *post  ){
 
 
     Post newPost ;
-
-    newPost.post = post ;
+    strcpy(newPost.post , post) ;
     newPost.id_post_writer = id_user ;
 
 

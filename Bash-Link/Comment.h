@@ -3,6 +3,9 @@
 #define COMMENT_H
 
 #include "FonctionCustom.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 // commentaire d'utilisateur
@@ -26,7 +29,7 @@ struct ListComment {
 
 ListComment initListComment(void){
 
-  return liste = malloc_p(sizeof(ListPost) ) ;
+  return (ListComment *) malloc_p(sizeof(ListComment) ) ;
 
 }
 
@@ -40,8 +43,9 @@ int ajouterComment(ListComment *list , int id_post , int id_writer , int id_comm
     } else  {
 
       Comment newComment ;
-
-      newComment.comment = comment ;
+       
+      strcpy(newComment.comment , comment ) ;
+       
       newComment.id_post = id_post ;
       newComment.id_writer = id_writer ;
       newComment.next = NULL ;
@@ -51,9 +55,11 @@ int ajouterComment(ListComment *list , int id_post , int id_writer , int id_comm
       if (list->tete == NULL) {
 
 
-        newComment.last = list->queue ;
+    
         list->tete = &newComment ;
         list-> queue = &newComment ;
+        newComment.next = NULL ;
+        newComment.last = NULL ;
 
 
         //saveComment(newComment.id_comment , newComment.id_post , newComment.comment ) ;
@@ -83,7 +89,9 @@ int ajouterComment(ListComment *list , int id_post , int id_writer , int id_comm
         list->queue->next = &newComment ;
 
         newComment.next = NULL ;
-
+        
+        newComment.last = list->queue ;
+        
         list-> queue = &newComment ;
 
         return 1 ; 
