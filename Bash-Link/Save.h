@@ -10,7 +10,7 @@ int savePost( int id_post , int id_post_writer , char *post ){
 
 
     char chaine[500] ;
-    
+
     FILE  *file =  fopen("post.txt" , "a+") ;
     if(file == NULL) { return 0 ; }
 
@@ -54,4 +54,27 @@ int savePost( int id_post , int id_post_writer , char *post ){
     fputs(chaine , file ) ;
 
     fclose(file) ;
+}
+
+// à finir 
+int saveComment(int id_comment , int id_post , int id_writer , char *comment){
+
+    //les id sont stocké sur 3 caractères
+
+    char chaine[500] ;
+    char id1[4] ,id2[4] ,id3[4] ;
+
+    FILE *file = fopen("comment.txt" , "a+") ;
+
+    if( file == NULL){return 0 ;}
+
+    if(id_comment < 10){
+
+      id1[0] ='0' ;
+      id1[1] = '0' ;
+      id1[2] = ''
+
+    }
+
+
 }

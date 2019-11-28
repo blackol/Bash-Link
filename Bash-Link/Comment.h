@@ -11,6 +11,7 @@ struct comment{
     Comment* last;
     char *comment;
     int id_comment;
+    int id_writer ;
     int id_post ;
     Comment *next;
 };
@@ -31,7 +32,7 @@ ListComment initListComment(void){
 
 // ajouter des commentaire dans une structure
 
-int ajouterComment(ListComment *list , Post *post , char *comment ){
+int ajouterComment(ListComment *list , int id_post , int id_writer , int id_comment , char *comment ){
 
 
     if (list == NULL) { return 0 ;
@@ -41,23 +42,29 @@ int ajouterComment(ListComment *list , Post *post , char *comment ){
       Comment newComment ;
 
       newComment.comment = comment ;
-      newComment.id_post = post->id_post ;
+      newComment.id_post = id_post ;
+      newComment.id_writer = id_writer ;
       newComment.next = NULL ;
+
+      newComment.id_comment = id_comment ;
 
       if (list->tete == NULL) {
 
-        newComment.id_comment = 0 ;
+
         newComment.last = list->queue ;
         list->tete = &newComment ;
         list-> queue = &newComment ;
 
 
-        saveComment(newComment.id_comment , newComment.id_post , newComment.comment ) ;
+        //saveComment(newComment.id_comment , newComment.id_post , newComment.comment ) ;
 
         return 1 ;
 
       }
-//sauvegarder dans le fichier commentaire 
+
+      /**
+
+      //sauvegarder dans le fichier commentaire
         FILE *fichier = fopen("comment.txt" , "a+") ;
 
         char chaine[500] ;
@@ -71,15 +78,17 @@ int ajouterComment(ListComment *list , Post *post , char *comment ){
 
         sscanf(precedent , "%d" , &id_comment);
 
-        newComment.id_comment = id_comment++ ;
 
+        */
         list->queue->next = &newComment ;
 
         newComment.next = NULL ;
 
         list-> queue = &newComment ;
 
-        saveComment(newComment.id_comment , newComment.id_post , newComment.comment ) ;
+        return 1 ; 
+
+        //saveComment(newComment.id_comment , newComment.id_post , newComment.comment ) ;
 
     }
 

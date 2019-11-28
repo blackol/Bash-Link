@@ -1,6 +1,6 @@
 
-#ifndef Post_h
-#define Post_h
+#ifndef POST_H
+#define POST_H
 #include "FonctionCustom.h"
 #include "User.h"
 
@@ -61,7 +61,13 @@ struct post{
 >>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
 
 
-ListPost * initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
+ListPost * initListPost(void){
+
+  ListPost *l = (ListPost *) malloc_p(sizeof(ListPost) ) ;
+
+  l->nb_post = 0 ;
+
+  }
 
 
 
@@ -74,7 +80,7 @@ ListPost * initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
 
   La fonction ajoute un post en fin de liste
   */
-int ajouterPost(ListPost *list , User *usr , char *post  ){
+int ajouterPost(ListPost *list , int id_user , int id_post , char *post  ){
 
 
 
@@ -87,7 +93,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
     Post newPost ;
 
     newPost.post = post ;
-    newPost.id_post_writer = usr->id ;
+    newPost.id_post_writer = id_user ;
 
 
     if (list->tete == NULL) {
@@ -99,11 +105,13 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
         newPost.next = NULL ;
 
-        savePost(newPost.id_post , usr->id , newPost.post ) ;
-
+        //savePost(newPost.id_post , usr->id , newPost.post ) ;
+        list-> nb_post ++ ;
         return 1 ;
 
     }
+
+    /**
 
     FILE *fichier = fopen("post.txt" , "a+") ;
 
@@ -113,7 +121,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     int id_post ;
 
-    /**
+
     while( fgets( chaine  ,500,fichier) != EOF ){
 
       strcpy(chaine , precedent) ; }
@@ -123,7 +131,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
     newPost.id_post = id_post++ ;
     */
 
-    newPost.id_post = dernier_id("post") ++ ;
+    newPost.id_post = id_post ;
 
     list->queue->next = &newPost ;
 
@@ -132,8 +140,8 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
     list-> queue = &newPost ;
 
     newPost.next = NULL ;
-
-    savePost(newPost.id_post , usr->id , newPost.post ) ;
+    list-> nb_post ++ ;
+    //savePost(newPost.id_post , usr->id , newPost.post ) ;
     return 1 ;
   }
 }
@@ -185,6 +193,8 @@ int modifierPost( ListPost *list , int id_post , char *post){
         if(p == list->queue){ list->queue = NULL ; }
         list->tete = p->next ;
         free(p) ;
+
+        list-> nb_post -- ;
         return 1 ;
       }
 
@@ -201,7 +211,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
             p->next->last = p ;
 
             free(tmp) ;
-
+            list->nb_post -- ;
             return 1 ;
         }
 
@@ -217,6 +227,8 @@ int modifierPost( ListPost *list , int id_post , char *post){
         list->queue = p->last ;
         p->last->next = NULL ;
         free(p) ;
+
+        list-> nb_post -- ;
         return 1 ;
 
       } else { return 0 ;  }

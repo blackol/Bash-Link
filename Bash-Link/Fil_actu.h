@@ -1,5 +1,9 @@
-#include "FonctionCustom.h"
 
+#ifndef FILE_ACTU
+#define FILE_ACTU
+
+#include "FonctionCustom.h"
+#include "Post.h"
 
 /**
 
@@ -29,6 +33,8 @@ A faire :
 // cette strcuture de donné servira de fil d'actualié
 
 // poste d'utilisateur
+/**
+
 typedef struct post Post;
 struct post{
     Post* last;
@@ -46,10 +52,14 @@ struct ListPost {
     int nb_post ;
 };
 
-ListPost * initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
 
 
+ListPost * initListPost(void){
 
+  return malloc_p(sizeof(ListPost) ) ; }
+
+
+*/
 
 
 
@@ -59,7 +69,7 @@ ListPost * initListPost(void){ return malloc_p(sizeof(ListPost) ) ; }
 
   La fonction ajoute un post en fin de liste
   */
-int ajouterPost(ListPost *list , User *usr , char *post  ){
+int ajouterActu(ListPost *list , int id_post , int id_post_writer , char *post  ){
 
 
 
@@ -72,24 +82,26 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
     Post newPost ;
 
     newPost.post = post ;
-    newPost.id_post_writer = usr->id ;
-
+    newPost.id_post_writer = id_post_writer ;
+    newPost.id_post = id_post ;
 
     if (list->tete == NULL) {
 
         list->tete = &newPost ;
         list-> queue = &newPost ;
-        newPost.id_post = 0 ;
+
         newPost.last = list->queue ;
 
         newPost.next = list->tete ;
 
-        savePost(newPost.id_post , usr->id , newPost.post ) ;
+        list-> nb_post ++ ;
+
+        //savePost(newPost.id_post , usr->id , newPost.post ) ;
 
         return 1 ;
 
     }
-
+    /**
     FILE *fichier = fopen("post.txt" , "a+") ;
 
     char chaine[500] ;
@@ -102,8 +114,8 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
       strcpy(chaine , precedent) ; }
 
     sscanf(precedent , "%d" , &id_post);
+    */
 
-    newPost.id_post = id_post++ ;
 
     list->queue->next = &newPost ;
 
@@ -113,7 +125,9 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
     newPost.next = list->tete ;
 
-    savePost(newPost.id_post , usr->id , newPost.post ) ;
+    list-> nb_post ++ ;
+
+    //savePost(newPost.id_post , usr->id , newPost.post ) ;
     return 1 ;
   }
 }
@@ -124,7 +138,7 @@ int ajouterPost(ListPost *list , User *usr , char *post  ){
 
 */
 
-int modifierPost( ListPost *list , int id_post , char *post){
+int modifierActu( ListPost *list , int id_post , char *post){
 
   if (list == NULL) { return 0 ;
 
@@ -145,7 +159,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
 
 
 
-  int supprimerPost( ListPost *list , int id_post , char *post){
+  int supprimerActu( ListPost *list , int id_post , char *post){
     if (list == NULL) {
 
       return 0 ;
@@ -186,7 +200,7 @@ int modifierPost( ListPost *list , int id_post , char *post){
 
 
       }
-      
+
       //si il faut supprimer le dernier élément
       if(p->id_post == id_post){
 
@@ -200,3 +214,5 @@ int modifierPost( ListPost *list , int id_post , char *post){
     }
 
   }
+
+  #endif
