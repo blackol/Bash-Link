@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 =======
@@ -13,7 +14,7 @@ void* malloc_p(unsigned int s){
   if(p=malloc(s)) return p;
   else {perror("erreur allocation\n");exit('EXIT_FAILURE');}
 }
-<<<<<<< HEAD
+
 
 int dernier_id(char *chaine){
   /**
@@ -27,14 +28,14 @@ int dernier_id(char *chaine){
   FILE *file = fopen(chaine , "a+" ) ;
 
 
-  chaine[500] ;
+  char ligne[500] ;
 
-  precedent[500] ;
+  char precedent[500] ;
 
   int id_post ;
 
-  while((chaine = fgets(file) )!= EOF ){
-    strcpy(chaine , precedent) ; }
+  while(fgets( ligne ,500,file)!= EOF ){
+    strcpy(precedent , ligne ) ; }
 
     sscanf(precedent , "%d" , &id_post);
 
@@ -42,6 +43,5 @@ int dernier_id(char *chaine){
 
 }
 
-=======
 #endif
->>>>>>> afc5ab4859b2d339693cc744e850738dda10a485
+
