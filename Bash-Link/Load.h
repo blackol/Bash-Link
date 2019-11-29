@@ -7,7 +7,7 @@
 
 ListPost * loadFilActu(int id_user){
 
-ListPost * list = initListPost() ;
+ListPost * list = (ListPost *) initListPost() ;
 char ami_ligne[500] ;
 char post_ligne[500] ;
 int id_post , id_post_writer , id_usr1 , id_usr2 , actu  ;
@@ -61,8 +61,8 @@ fclose(file_ami) ;
 fclose(file_post) ;
 if (actu){ return list ; }
 
-
-
+return NULL;
+}
 
     ListPost * loadPost(int id_user){
         
@@ -99,8 +99,5 @@ if (actu){ return list ; }
 //loadListAmi(int id_user){
 
   
-
-
-}
 
 #endif

@@ -172,8 +172,8 @@ void superMenu(){
     }
     if (choix==2) {
         printf("Recherche");
-        chercherUser(<#char *recherche#>);
-        
+//        chercherUser(char *recherche);
+//        Editor place
     }
     if (choix==3) {
         printf("Suggestion d'amis");
@@ -189,16 +189,16 @@ void superMenu(){
             }
             if (choixsuperm==2) {
                 printf("ajouterPost");
-                ajouterPost(<#ListPost *list#>, <#int id_user#>, <#int id_post#>, <#char *post#>);
+//                ajouterPost(<#ListPost *list#>, <#int id_user#>, <#int id_post#>, <#char *post#>);
             }
             if (choixsuperm==3) {
                 printf("modifPost");
-                modifierPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
+//                modifierPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
             }
 
             if (choixsuperm==4){
                 printf("suppPost");
-                supprimerPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
+//                supprimerPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
             }
         }
     }
