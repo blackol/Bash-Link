@@ -5,16 +5,16 @@
 #include <string.h>
 
 
-ListPost loadFilActu(int id_user){
+ListPost * loadFilActu(int id_user){
 
-ListPost list = initListPost() ;
+ListPost * list = initListPost() ;
 char ami_ligne[500] ;
 char post_ligne[500] ;
 int id_post , id_post_writer , id_usr1 , id_usr2 , actu  ;
 char post[500] ;
  actu = 0 ;
-FILE file_post = fopen("post.txt") ;
-FILE file_ami = fopen("amis.txt") ;
+    FILE *file_post = fopen("post.txt"  , "a+") ;
+FILE *file_ami = fopen("amis.txt" , "a+") ;
 
 
 while ( fgets( ami_ligne  ,500 ,file_ami)!= EOF ) {
@@ -63,18 +63,17 @@ if (actu){ return list ; }
 
 
 
-}
 
+    ListPost * loadPost(int id_user){
+        
 
-ListPost loadPost(int id_user){
-
-  ListPost list = initListPost() ;
+  ListPost *list = initListPost() ;
   char post_ligne[500] , post[500] ;
 
 
   int id_writer , id_post ;
 
-  FILE file_post = fopen("post.txt") ;
+  FILE *file_post = fopen("post.txt" , "a+") ;
 
     while ( fgets( post_ligne  , 500 ,file_post)!= EOF ) {
 
@@ -97,7 +96,7 @@ ListPost loadPost(int id_user){
 }
 
 
-loadListAmi(int id_user){
+//loadListAmi(int id_user){
 
   
 

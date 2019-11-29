@@ -10,6 +10,9 @@
 #define Header_h
 #include "Post.h"
 #include "Interface.h"
+#include <util.h>
+
+void MENU(void);
 
 // gestion des fichiers pour la sauvegarde______________
  FILE *P_FICHIER; /* pointeur sur FILE */
@@ -309,19 +312,19 @@ void CONNEXION(){
     int ESSAI =0,VERIF=0,ID=0;
     FILE *fichier = NULL;
     fichier = fopen("User","r");
-    
     printf("ENTREZ VOTRE LOGIN : ");
     scanf("%s", LOGIN);
    
+//    creer une fonction qui récupère id utilisateur.
     
     while(!fichier && ESSAI<3){
-        printf("AUCUN UTILISATEUR ENREGISTRER AVEC LE LOGIN :%s.\n",NOM_FICHIER);
+        printf("AUCUN UTILISATEUR ENREGISTRER AVEC LE LOGIN :%s.\n",P_FICHIER);
         printf("VERIFIER L'ORTHOGRAPHE OU CRÉE UN COMPT SI C'EST PAS DEJA FAIT.\n");
         printf("APRES 3 ESSAI VOUS SEREZ AUTOMATIQUEMENT REDIRIGER VERS LE MENU.\n");
         
         printf("ENTREZ VOTRE LOGIN : ");
-        scanf("%s", NOM_FICHIER);
-        fichier = fopen(NOM_FICHIER, "r");
+        scanf("%s", P_FICHIER);
+        fichier = fopen(P_FICHIER, "r");
         ESSAI+=1;
     }
     if (ESSAI==3){MENU();}
@@ -338,13 +341,15 @@ void CONNEXION(){
     printf("%s\n",MDP_TMP );
     
     if (strcmp(MDP,MDP_TMP)){
-        SUPER_MENU();
+//        il faut le fournir un id utilisateur
+        superMenu();
             
     }
     else{
         printf("ERREUR MOT DE PASSE\n");
         printf("\n");
     }
+    
 
 }
 
@@ -383,16 +388,13 @@ void INTERFACE(int etat){
     }
     EN_TETE();
 }
-//                       nouvelle fonction super menu a intégrer
+// Fonction pour récuperer id utilisateur en fonction du login
 
-void SUPER_MENU(){
-    EN_TETE();
-    EN_TETE();
 
-}
+
 // Menu de page de présentation
 
-void MENU(){
+void MENU(){ // conflie de type avec menu
     int ETAT=0;
 
     while (ETAT>=0 && ETAT<3){

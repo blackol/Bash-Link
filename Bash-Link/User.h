@@ -1,7 +1,7 @@
 #ifndef User_h
 #define User_h
 
-#include "FonctionCustom.h" ;
+#include "FonctionCustom.h"
 
 //Structure des utilisateur
 typedef struct User User;
