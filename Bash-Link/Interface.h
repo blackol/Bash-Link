@@ -100,27 +100,28 @@ void affichageselectsupermenupost(){
 int AfficherActu(){
 
     ListPost *pointer = initListPost();
+    Post *p = initListPost();
 //     pointer->tete;
     
     char post;
-    int n,*p;
+    int n;
     if(pointer->tete==NULL){
     return 0;
     }
     else{
-        pointer->post = post;
+        p->post = post;
         return 1;
     }
     printf("Entrez un entier 1 actu suivant  ou actu précedent 2\n");
     scanf("%d",&n);
     if(n==1){
-    pointer->next;
-    printf(":%s\n",pointer->next)
+    p->next;
+    printf(":%s\n",p->next);
     }
     if(n==2){
-        pointer->last;
+        p->last;
     }
-    pointer->post;
+    p->post;
     printf("Les donnees sont:%s\n",p->post);
 }
 
@@ -128,51 +129,35 @@ int AfficherActu(){
 int AfficherPost(){
 
     ListPost *pointer = initListPost();
-//     pointer->tete;
-    
-    char post;
-    int n,*p;
-    if(pointer->tete==NULL){
-    return 0;
-    }
-    else{
-        pointer->post = post;
-        return 1;
-    }
-    printf("Entrez un entier 1 actu suivant  ou actu précedent 2\n");
-    scanf("%d",&n);
-    if(n==1){
-    pointer->next;
-    printf(":%s\n",pointer->next)
-    }
-    if(n==2){
-        pointer->last;
-    }
-    pointer->post;
-    printf("Les donnees sont:%s\n",pointer->post);
+        Post *p = initListPost();
+    //     pointer->tete;
+        
+        char post;
+        int n;
+        if(pointer->tete==NULL){
+        return 0;
+        }
+        else{
+            p->post = post;
+            return 1;
+        }
+        printf("Entrez un entier 1 actu suivant  ou actu précedent 2\n");
+        scanf("%d",&n);
+        if(n==1){
+        p->next;
+        printf(":%s\n",p->next);
+        }
+        if(n==2){
+            p->last;
+        }
+        printf("Les donnees sont:%s\n",p->post);
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void superMenu(int IDutilisateur){
+void superMenu(){
     int choix = 0,choixsuperm=0,choie=0;
     affichageSupermenu();
     scanf("%d",&choix);
@@ -187,7 +172,7 @@ void superMenu(int IDutilisateur){
     }
     if (choix==2) {
         printf("Recherche");
-        chercherUser();
+        chercherUser(<#char *recherche#>);
         
     }
     if (choix==3) {
@@ -204,16 +189,16 @@ void superMenu(int IDutilisateur){
             }
             if (choixsuperm==2) {
                 printf("ajouterPost");
-                loadPost();
+                ajouterPost(<#ListPost *list#>, <#int id_user#>, <#int id_post#>, <#char *post#>);
             }
             if (choixsuperm==3) {
                 printf("modifPost");
-                 modifierPost();
+                modifierPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
             }
 
             if (choixsuperm==4){
                 printf("suppPost");
-                supprimerPost();
+                supprimerPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
             }
         }
     }

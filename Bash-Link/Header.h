@@ -341,7 +341,7 @@ void CONNEXION(){
     printf("%s\n",MDP_TMP );
     
     if (strcmp(MDP,MDP_TMP)){
-//        il faut le fournir un id utilisateur
+//        il faut lui fournirl'id utilisateur
         superMenu();
             
     }
