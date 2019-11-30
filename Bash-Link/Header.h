@@ -183,10 +183,7 @@ void CONNEXION(){
 
     if (strcmp(MDP,MDP_TMP)){
 
-<<<<<<< HEAD
-        //SUPER_MENU();
-=======
->>>>>>> 87a00dcb29b0a2c3652536dfa8e0caf7d2c631bf
+
 
 
 //        il faut lui fournirl'id utilisateur
