@@ -99,60 +99,69 @@ void affichageselectsupermenupost(){
 
 // super menu toute les fonction du duper menu son à faire
 
-int AfficherActu(){
+void AfficherActu(ListPost *list){
 
-    ListPost *pointer = initListPost();
-    Post *p = initListPost();
-//     pointer->tete;
+  
+    Post *p = list->tete ;
+    int n , continuer = 1 ;
     
-    char post;
-    int n;
-    if(pointer->tete==NULL){
-    return 0;
+    while(continuer){
+        
+        
+        printf("Navigation\n 1 -> actu suivant\n 2 -> actu précedent\n 3 -> retour \n");
+               scanf("%d",&n);
+               if(n==1){
+                if(p->next) p = p->next;
+               printf("Post : \n %s\n",p->post);
+               
+               } else if(n == 2){
+                   
+                   if(p->last) p = p->last ;
+                  printf("Post : \n %s\n",p->post);
+               
+               }else if(n ==  3){
+                   
+                   continuer  = 0 ;
+                   
+                   
+               }else {
+                   
+                   printf("Erreur , veuillez saisir un chiffre valide");
+               }
     }
-    else{
-        p->post = post;
-        return 1;
-    }
-    printf("Entrez un entier 1 actu suivant  ou actu précedent 2\n");
-    scanf("%d",&n);
-    if(n==1){
-    p->next;
-    printf(":%s\n",p->next);
-    }
-    if(n==2){
-        p->last;
-    }
-    p->post;
-    printf("Les donnees sont:%s\n",p->post);
 }
 
 
-int AfficherPost(){
+void AfficherPost(ListPost *list ){
 
-    ListPost *pointer = initListPost();
-        Post *p = initListPost();
-    //     pointer->tete;
+    Post *p = list->tete ;
+    int n , continuer = 1 ;
+    
+    while(continuer){
         
-        char post;
-        int n;
-        if(pointer->tete==NULL){
-        return 0;
-        }
-        else{
-            p->post = post;
-            return 1;
-        }
-        printf("Entrez un entier 1 actu suivant  ou actu précedent 2\n");
-        scanf("%d",&n);
-        if(n==1){
-        p->next;
-        printf(":%s\n",p->next);
-        }
-        if(n==2){
-            p->last;
-        }
-        printf("Les donnees sont:%s\n",p->post);
+        
+        printf("Navigation\n 1 -> Post suivant\n 2 -> Post précedent \n 3 -> retour \n");
+               scanf("%d",&n);
+               if(n==1){
+                if(p->next) p = p->next;
+               printf("Post : \n %s\n",p->post);
+               
+               } else if(n == 2){
+                   
+                   if(p->last) p = p->last ;
+                  printf("Post : \n %s\n",p->post);
+               
+               }else if(n ==  3){
+                   
+                   continuer  = 0 ;
+                   
+                   
+               }else {
+                   
+                   printf("Erreur , veuillez saisir un chiffre valide");
+               }
+    }
+       
 }
 
 ListPost list;
@@ -167,7 +176,8 @@ void superMenu(int id){
 //        fils d'actualité
         while (choie!=9) {
             affichageselectsupermenu1();
-            AfficherActu();
+            ListPost *List_fil_actu = loadFilActu(id) ;
+            AfficherActu(List_fil_actu) ;
         }
         
     }
@@ -186,8 +196,10 @@ void superMenu(int id){
             scanf("%d",&choixsuperm);
              affichageselectsupermenupost();
             if (choixsuperm==1) {
-                 printf("afficherPost");
-                 AfficherPost();
+                
+                ListPost *ListPost = loadPost(id) ;
+                AfficherPost(ListPost) ;
+                
             }
             if (choixsuperm==2) {
                 printf("ajouterPost");
