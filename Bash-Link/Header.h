@@ -15,186 +15,12 @@
 
 void MENU(void);
 
-<<<<<<< HEAD
-=======
+
 // gestion des fichiers pour la sauvegarde______________
  FILE *P_FICHIER; /* pointeur sur FILE */
 
 
- int  C,NB_ENREG;
 
- char saisieUser;
- const char *a;
- int z;
-// ancienne fonction s'inscrire
- void neww(){
-
-     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
-     printf("Entrez le new login: ");
-     scanf("%s", NOM_FICHIER);
-     P_FICHIER = fopen(NOM_FICHIER, "a");
-
-     NB_ENREG=1;C = 0;
-
-     while (C<NB_ENREG){
-
-
-
-     printf("Entrez le nom de la personne : ");
-         scanf("%s", NOM_PERS);
-         fprintf(P_FICHIER, "%s\n", NOM_PERS);
-
-     printf("Entrez le prenom de la personne : ");
-         scanf("%s", PRENOM_PERS);
-         fprintf(P_FICHIER,"%s\n",PRENOM_PERS);
-
-     printf("Votre age : ");
-         scanf("%s", AGE);
-         fprintf(P_FICHIER,"%s\n",AGE);
-
-     printf("Entrez votre mot de passe : ");
-         scanf("%s", mdp);
-         fprintf(P_FICHIER, "%s\n", mdp);
-
-         C=1;
-
-      }
-    fclose(P_FICHIER);
- }
-
-// fonction qui affiche le contenue d'un fichiers celui de l'utilisateur (ancine code à supprimer)
-
- void ee(){
-
-     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
-
-     printf("consulter : ");
-     scanf("%s", NOM_FICHIER);
-
-     P_FICHIER = fopen(NOM_FICHIER, "r");
-
-     while (!feof(P_FICHIER)){
-
-     fscanf(P_FICHIER, "%s", NOM_PERS);
-     fscanf(P_FICHIER, "\n");
-         printf("NOM : %s\n", NOM_PERS);
-
-
-
-
-         fscanf(P_FICHIER,"%s\n",PRENOM_PERS);
-         printf("PRENOM : %s\n", PRENOM_PERS);
-         fscanf(P_FICHIER,"%s\n",AGE);
-         printf("AGE : %s\n",AGE);
-         printf("\n");
-
-         fscanf(P_FICHIER,"%s\n",mdp);
-         printf("mdp : %s\n",mdp);
-         printf("\n");
-         C=1;
-     }
-     fclose(P_FICHIER);
- }
-// ancien affichage du profil de l'utilisateur
-
- void vog(){
-
-     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10],MDP_TMP[30];
-     int z=1;
-     printf("LOGIN : ");
-     scanf("%s", NOM_FICHIER);
-
-      P_FICHIER = fopen(NOM_FICHIER, "r");
-    fgets(NOM_PERS,30,P_FICHIER);
-     fgets(PRENOM_PERS,30,P_FICHIER);
-     fgets(AGE,30,P_FICHIER);
-     fgets(mdp,30,P_FICHIER);
-
-     printf("MOT DE PASSE : ");
-     scanf("%s",MDP_TMP);
-     z=strcmp(mdp,MDP_TMP);
-
-     if (z==10){
-             printf("CONNECTER \n");
-
-     }
-     else{
-         printf("ERREUR MOT DE PASSE\n");
-         printf("\n");
-
-     }
-
- }
-//oiuytrdrty
-
-
-// page de co _________________________________________________________________________
-
-void affichage_de_connexion(){
-//    Création de la page de garde
-    printf("-----------------------------------------------------------------------------\n");
-    printf("/"); printf("Bienvenue sur Bash Link le reseaux social pour discuter en toute discrétion"); printf("/");
-    printf("\n");
-     printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t\t\t\t\t\t\t\t S'incrire 1 "); printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t\t\t\t\t\t\t\tSe Connecter 2  ") ;printf("\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t\t\t\t\t\t\tMots passe oubliez 3   ") ;printf("\t\t\t\t\t\t\t/");
-          printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("-----------------------------------------------------------------------------\n");
-    }
-// fonction à supprimer ou garder pas sûr
-void inscriptionPageinterface (){
-
-}
-
-void connecPageinterface(){
-
-}
-
-
-void pageco(){
-    int choixco=0;
-
-    while (choixco!=9) {
-        affichage_de_connexion();
-        scanf("%d",&choixco);
-
-        if (choixco==1) {
-            neww();
-            ee();
-        }
-
-        else if (choixco==2) {
-            vog();
-//            superMenu();
-        }
-
-        else if (choixco==3) {
-            printf("pas encore intégrer");
-        }
-
-        if (choixco==9)
-            {
-                            }
-    }
-
-}
->>>>>>> 9a85e1464a4c4a3b84d5e2774f0a20f3e3da0b35
 // Nouveau code
 // nouveau code pour incrire les menbres
 void INSCRIPTION(){
@@ -316,26 +142,23 @@ void CONNEXION(){
     int ESSAI =0,VERIF=0,ID=0;
     FILE *fichier = NULL;
     fichier = fopen("User","r");
-<<<<<<< HEAD
+
 
     printf("ENTREZ VOTRE LOGIN : ");
     scanf("%s", LOGIN);
 
 
-=======
     printf("ENTREZ VOTRE LOGIN : ");
     scanf("%s", LOGIN);
-   
+
 //    creer une fonction qui récupère id utilisateur.
 
     // fait (^_^) c'est dans FonctionCustom.h
     ID = getId(LOGIN) ;
-    
-    
-    
->>>>>>> 9a85e1464a4c4a3b84d5e2774f0a20f3e3da0b35
+
+
     while(!fichier && ESSAI<3){
-        printf("AUCUN UTILISATEUR ENREGISTRER AVEC LE LOGIN :%s.\n",P_FICHIER);
+        printf("AUCUN UTILISATEUR ENREGISTRER AVEC LE LOGIN :%s.\n",LOGIN);
         printf("VERIFIER L'ORTHOGRAPHE OU CRÉE UN COMPT SI C'EST PAS DEJA FAIT.\n");
         printf("APRES 3 ESSAI VOUS SEREZ AUTOMATIQUEMENT REDIRIGER VERS LE MENU.\n");
 
@@ -358,20 +181,20 @@ void CONNEXION(){
     printf("%s\n",MDP_TMP );
 
     if (strcmp(MDP,MDP_TMP)){
-<<<<<<< HEAD
+
         SUPER_MENU();
 
-=======
+
 //        il faut lui fournirl'id utilisateur
         superMenu(ID);
-            
->>>>>>> 9a85e1464a4c4a3b84d5e2774f0a20f3e3da0b35
+
+
     }
     else{
         printf("ERREUR MOT DE PASSE\n");
         printf("\n");
     }
-    
+
 
 }
 
@@ -430,7 +253,7 @@ void MENU(){ // conflie de type avec menu
             INTERFACE(ETAT);
             CONNEXION();
             system ("clear");
-            
+
         }
 
             // INSCRIPTION
