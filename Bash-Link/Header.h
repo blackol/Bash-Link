@@ -11,183 +11,6 @@
 #include "Post.h"
 #include "Interface.h"
 
-// gestion des fichiers pour la sauvegarde______________
- FILE *P_FICHIER; /* pointeur sur FILE */
-
-
- int  C,NB_ENREG;
-
- char saisieUser;
- const char *a;
- int z;
-// ancienne fonction s'inscrire
- void neww(){
-
-     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
-     printf("Entrez le new login: ");
-     scanf("%s", NOM_FICHIER);
-     P_FICHIER = fopen(NOM_FICHIER, "a");
-
-     NB_ENREG=1;C = 0;
-
-     while (C<NB_ENREG){
-
-
-
-     printf("Entrez le nom de la personne : ");
-         scanf("%s", NOM_PERS);
-         fprintf(P_FICHIER, "%s\n", NOM_PERS);
-
-     printf("Entrez le prenom de la personne : ");
-         scanf("%s", PRENOM_PERS);
-         fprintf(P_FICHIER,"%s\n",PRENOM_PERS);
-
-     printf("Votre age : ");
-         scanf("%s", AGE);
-         fprintf(P_FICHIER,"%s\n",AGE);
-
-     printf("Entrez votre mot de passe : ");
-         scanf("%s", mdp);
-         fprintf(P_FICHIER, "%s\n", mdp);
-
-         C=1;
-
-      }
-    fclose(P_FICHIER);
- }
-
-// fonction qui affiche le contenue d'un fichiers celui de l'utilisateur (ancine code à supprimer)
-
- void ee(){
-
-     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
-
-     printf("consulter : ");
-     scanf("%s", NOM_FICHIER);
-
-     P_FICHIER = fopen(NOM_FICHIER, "r");
-
-     while (!feof(P_FICHIER)){
-
-     fscanf(P_FICHIER, "%s", NOM_PERS);
-     fscanf(P_FICHIER, "\n");
-         printf("NOM : %s\n", NOM_PERS);
-
-
-
-
-         fscanf(P_FICHIER,"%s\n",PRENOM_PERS);
-         printf("PRENOM : %s\n", PRENOM_PERS);
-         fscanf(P_FICHIER,"%s\n",AGE);
-         printf("AGE : %s\n",AGE);
-         printf("\n");
-
-         fscanf(P_FICHIER,"%s\n",mdp);
-         printf("mdp : %s\n",mdp);
-         printf("\n");
-         C=1;
-     }
-     fclose(P_FICHIER);
- }
-// ancien affichage du profil de l'utilisateur
-
- void vog(){
-
-     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10],MDP_TMP[30];
-     int z=1;
-     printf("LOGIN : ");
-     scanf("%s", NOM_FICHIER);
-
-      P_FICHIER = fopen(NOM_FICHIER, "r");
-    fgets(NOM_PERS,30,P_FICHIER);
-     fgets(PRENOM_PERS,30,P_FICHIER);
-     fgets(AGE,30,P_FICHIER);
-     fgets(mdp,30,P_FICHIER);
-
-     printf("MOT DE PASSE : ");
-     scanf("%s",MDP_TMP);
-     z=strcmp(mdp,MDP_TMP);
-
-     if (z==10){
-             printf("CONNECTER \n");
-
-     }
-     else{
-         printf("ERREUR MOT DE PASSE\n");
-         printf("\n");
-
-     }
-
- }
-//oiuytrdrty
-
-
-// page de co _________________________________________________________________________
-
-void affichage_de_connexion(){
-//    Création de la page de garde
-    printf("-----------------------------------------------------------------------------\n");
-    printf("/"); printf("Bienvenue sur Bash Link le reseaux social pour discuter en toute discrétion"); printf("/");
-    printf("\n");
-     printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t\t\t\t\t\t\t\t S'incrire 1 "); printf("\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t\t\t\t\t\t\t\tSe Connecter 2  ") ;printf("\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/"); printf("\t\t\t\t\t\t\tMots passe oubliez 3   ") ;printf("\t\t\t\t\t\t\t/");
-          printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("/");printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/");
-       printf("\n");
-    printf("-----------------------------------------------------------------------------\n");
-    }
-// fonction à supprimer ou garder pas sûr
-void inscriptionPageinterface (){
-
-}
-
-void connecPageinterface(){
-
-}
-
-
-void pageco(){
-    int choixco=0;
-
-    while (choixco!=9) {
-        affichage_de_connexion();
-        scanf("%d",&choixco);
-
-        if (choixco==1) {
-            neww();
-            ee();
-        }
-
-        else if (choixco==2) {
-            vog();
-            superMenu();
-        }
-
-        else if (choixco==3) {
-            printf("pas encore intégrer");
-        }
-
-        if (choixco==9)
-            {
-                            }
-    }
-
-}
 // Nouveau code
 // nouveau code pour incrire les menbres
 void INSCRIPTION(){
@@ -217,11 +40,11 @@ void INSCRIPTION(){
     printf("Entrez le nom de la personne : ");
     scanf("%s", NOM);
     fprintf(fichier, "%s ", NOM);
-         
+
     printf("Entrez le prenom de la personne : ");
     scanf("%s", PRENOM);
     fprintf(fichier,"%s ",PRENOM);
-         
+
     printf("Votre age : ");
     scanf("%s", AGE);
     fprintf(fichier,"%s ",AGE);
@@ -230,7 +53,7 @@ void INSCRIPTION(){
     scanf("%s",MDP);
     fprintf(fichier, "%s ",MDP);
 
-   
+
     for(int i=0;i<6;i++){
         printf("CHOIX %d :%s\n",i+1,TAB_QUES[i]);
     }
@@ -263,7 +86,7 @@ void INSCRIPTION(){
     printf("\nQUELLE EST VOTRE REPONSE : ");
     scanf("%s",REPONSE2);
     fprintf(fichier, "%s\n",REPONSE2);
-   
+
     fclose(fichier);
     MENU();
  }
@@ -271,7 +94,7 @@ void INSCRIPTION(){
 // afficher 1 utilisateur fonction à debuguer
 
  void AFFICHER(){
-     
+
     char NOM_FICHIER[30], NOM_PERS[30],PRENOM_PERS[30],mdp[30],AGE[10];
     FILE *fichier = NULL;
     printf("ENTREZ LE LOGIN RECHERCHER : ");
@@ -280,7 +103,7 @@ void INSCRIPTION(){
     fichier = fopen(NOM_FICHIER, "r");
 
     while (!feof(fichier)){
-         
+
     fscanf(fichier, "%s", NOM_PERS);
     fscanf(fichier, "\n");
         printf("NOM : %s\n", NOM_PERS);
@@ -297,7 +120,7 @@ void INSCRIPTION(){
         fscanf(fichier,"%s\n",mdp);
         printf("mdp : %s\n",mdp);
         printf("\n");
-        
+
     }
     fclose(fichier);
 }
@@ -309,16 +132,16 @@ void CONNEXION(){
     int ESSAI =0,VERIF=0,ID=0;
     FILE *fichier = NULL;
     fichier = fopen("User","r");
-    
+
     printf("ENTREZ VOTRE LOGIN : ");
     scanf("%s", LOGIN);
-   
-    
+
+
     while(!fichier && ESSAI<3){
         printf("AUCUN UTILISATEUR ENREGISTRER AVEC LE LOGIN :%s.\n",NOM_FICHIER);
         printf("VERIFIER L'ORTHOGRAPHE OU CRÉE UN COMPT SI C'EST PAS DEJA FAIT.\n");
         printf("APRES 3 ESSAI VOUS SEREZ AUTOMATIQUEMENT REDIRIGER VERS LE MENU.\n");
-        
+
         printf("ENTREZ VOTRE LOGIN : ");
         scanf("%s", NOM_FICHIER);
         fichier = fopen(NOM_FICHIER, "r");
@@ -330,16 +153,16 @@ void CONNEXION(){
     fgets(PRENOM,30,fichier);
     fgets(AGE,30,fichier);
     fgets(MDP,30,fichier);
-     
+
     printf("MOT DE PASSE : ");
     scanf("%s",MDP_TMP);
 
     printf("%s\n",MDP);
     printf("%s\n",MDP_TMP );
-    
+
     if (strcmp(MDP,MDP_TMP)){
         SUPER_MENU();
-            
+
     }
     else{
         printf("ERREUR MOT DE PASSE\n");
@@ -425,7 +248,7 @@ void MENU(){
             MENU();
         }
     }
-    
+
 }
 
 
