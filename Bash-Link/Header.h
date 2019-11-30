@@ -59,6 +59,7 @@ void INSCRIPTION(){
     scanf("%s", AGE);
     fprintf(fichier,"%s ",AGE);
 
+
     printf("Entrez votre mot de passe : ");
     scanf("%s",MDP);
     fprintf(fichier, "%s ",MDP);
