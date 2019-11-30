@@ -11,7 +11,7 @@
 #include "Post.h"
 #include "Interface.h"
 #include "FonctionCustom.h"
-#include <util.h>
+//#include <util.h>
 
 void MENU(void);
 
@@ -183,7 +183,7 @@ void CONNEXION(){
 
     if (strcmp(MDP,MDP_TMP)){
 
-        SUPER_MENU();
+        //SUPER_MENU();
 
 
 //        il faut lui fournirl'id utilisateur
