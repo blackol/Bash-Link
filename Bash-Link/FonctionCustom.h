@@ -20,6 +20,8 @@ int dernier_id(char *chaine){
   /**
 
   passer le nom du fichier en paramètre sans le ".txt"
+   
+    peut importe l'ordre des id dans le fichier txt sa fonctionne !!!! (^_^)
 
   */
   chaine = realloc(chaine , sizeof(char)* (strlen(chaine) + 5)) ;
@@ -32,15 +34,54 @@ int dernier_id(char *chaine){
 
   char precedent[500] ;
 
-  int id_post ;
+  int id_rendre = 0 ,  id_bidon ;
 
   while(fgets( ligne ,500,file) != EOF ){
-    strcpy(precedent , ligne ) ; }
+    strcpy(precedent , ligne ) ;
+      
+      sscanf(precedent, "%d" , &id_bidon) ;
+      
+      if(id_bidon > id_rendre){
+          
+          id_rendre = id_bidon ;
+      }
+  }
 
-    sscanf(precedent , "%d" , &id_post);
 
-    return id_post ;
+    return id_rendre ;
 
+}
+
+
+int getId(char *login){
+    
+    
+    FILE *file = fopen("user.txt" , "a+" ) ;
+    
+    char ligne[500] , precedent[500] , nom[51] , prenom[51] ;
+     
+    char chaine[51] ;
+
+    int id_user = -1 , age , id_bidon ;
+
+    while(fgets( ligne ,500,file) != EOF ){
+      strcpy(precedent , ligne ) ;
+        
+    sscanf(precedent , "%d %d %s %s %s" , &id_bidon ,&age , nom , prenom , chaine ) ;
+        
+        if( strcmp(chaine , login) == 0 ){
+            
+            id_user = id_bidon ;
+            
+            
+        }
+    
+        
+    }
+    
+    
+    return id_user ;
+    
 }
 
 #endif

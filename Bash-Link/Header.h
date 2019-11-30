@@ -10,6 +10,7 @@
 #define Header_h
 #include "Post.h"
 #include "Interface.h"
+#include "FonctionCustom.h"
 #include <util.h>
 
 void MENU(void);
@@ -178,7 +179,7 @@ void pageco(){
 
         else if (choixco==2) {
             vog();
-            superMenu();
+//            superMenu();
         }
 
         else if (choixco==3) {
@@ -257,7 +258,7 @@ void INSCRIPTION(){
     }
     printf("CHOISISSEZ UNE AUTRE QUESTION : ");
     scanf("%d",&nb2);
-    while(nb2<0 || nb2 >6 && nb1 != nb2){
+    while((nb2<0) || (nb2 >6 && nb1 != nb2) ){
         printf("\nCHOISISSEZ UNE QUESTION ENTRE 1 ET 6 ET DIFFERENTE DE LA PREMIERE : ");
         scanf("%d",&nb2);
     }
@@ -316,6 +317,11 @@ void CONNEXION(){
     scanf("%s", LOGIN);
    
 //    creer une fonction qui récupère id utilisateur.
+
+    // fait (^_^) c'est dans FonctionCustom.h
+    ID = getId(LOGIN) ;
+    
+    
     
     while(!fichier && ESSAI<3){
         printf("AUCUN UTILISATEUR ENREGISTRER AVEC LE LOGIN :%s.\n",P_FICHIER);
@@ -342,7 +348,7 @@ void CONNEXION(){
     
     if (strcmp(MDP,MDP_TMP)){
 //        il faut lui fournirl'id utilisateur
-        superMenu();
+        superMenu(ID);
             
     }
     else{

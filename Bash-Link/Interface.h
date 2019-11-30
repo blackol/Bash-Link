@@ -3,6 +3,8 @@
 #include "Header.h"
 #include "Load.h"
 #include "Post.h"
+#include "FonctionCustom.h"
+
 // copyright by G3
 void affichageSupermenu(){
     printf("-----------------------------------------------------------------------------\n");
@@ -153,11 +155,10 @@ int AfficherPost(){
         printf("Les donnees sont:%s\n",p->post);
 }
 
+ListPost list;
 
 
-
-
-void superMenu(){
+void superMenu(int id){
     int choix = 0,choixsuperm=0,choie=0;
     affichageSupermenu();
     scanf("%d",&choix);
@@ -178,6 +179,7 @@ void superMenu(){
     if (choix==3) {
         printf("Suggestion d'amis");
     }
+    char a[10000000];
     if (choix==4) {
         printf("post");
         while (choixsuperm!=9) {
@@ -189,16 +191,22 @@ void superMenu(){
             }
             if (choixsuperm==2) {
                 printf("ajouterPost");
-//                ajouterPost(<#ListPost *list#>, <#int id_user#>, <#int id_post#>, <#char *post#>);
+                printf("Entrez le post");
+                scanf("%s",a);
+                int idpost = dernier_id("post");
+                idpost++ ;
+                ajouterPost(&list, id, idpost, a);
             }
             if (choixsuperm==3) {
                 printf("modifPost");
-//                modifierPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
+                printf("Entrez le post");
+                scanf("%s",a);
+                modifierPost(&list, id,a);
             }
 
             if (choixsuperm==4){
                 printf("suppPost");
-//                supprimerPost(<#ListPost *list#>, <#int id_post#>, <#char *post#>);
+                supprimerPost(&list,id, a);
             }
         }
     }
