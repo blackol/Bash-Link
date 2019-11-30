@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1B0B0FE5-FEAC-4D1F-BCB0-981B18BFD437"
+            uuid = "75233510-D0A4-4DB9-B92D-C841574AA6CB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bash-Link/Interface.h"
+            filePath = "Bash-Link/Header.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "affichageSupermenu()"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
+            landmarkName = "CONNEXION()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEC02B4A-A3F7-4D0B-9ED4-29CE921EC361"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bash-Link/Header.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "CONNEXION()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

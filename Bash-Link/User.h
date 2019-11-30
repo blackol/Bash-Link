@@ -1,7 +1,7 @@
 #ifndef User_h
 #define User_h
 
-#include "FonctionCustom.h" ;
+#include "FonctionCustom.h"
 
 //Structure des utilisateur
 typedef struct User User;
@@ -72,7 +72,8 @@ ListUser * chercherUser(char *recherche){
 ListUser *l =  initListUser();
     
   //à finir
-  FILE *file  = fopen("User.txt" , "a+");
+    FILE *file;
+    file = fopen("User.txt" , "a+");
   char ligne[500] ;
   int age , id ;
   char nom[51];
@@ -90,7 +91,7 @@ ListUser *l =  initListUser();
      }
 
   }
-    fcolse(file) ;
+    fclose(file) ;
     return l ;
 
 }
