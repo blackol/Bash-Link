@@ -59,7 +59,10 @@ ListPost * initListPost(void){
   }
 
 
-
+void afficheEnsemble(Post * s){
+    printf("%d\n",s->id_post_writer);
+    printf("%s\n",s->post);
+}
 
 
 

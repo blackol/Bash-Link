@@ -14,10 +14,10 @@
 int main(int argc, const char * argv[]) {
     // a intégrer dans le menu de co
 //    superMenu();
-     pageco();
+//     pageco();
 //    nouveaux menu non fonctionnelle
     
-//    MENU();
+    MENU();
 
     return 0;
 }

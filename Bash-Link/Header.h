@@ -414,6 +414,7 @@ void MENU(){ // conflie de type avec menu
             INTERFACE(ETAT);
             CONNEXION();
             system ("clear");
+            
         }
 
             // INSCRIPTION

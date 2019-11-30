@@ -7,6 +7,7 @@
 #include "Header.h"
 
 
+
 // cette fonction protege le malloc en faisant un test de sa valeur de retour
 // si c'est NULL, on sort du programme avec un code d'erreur
 void* malloc_p(unsigned int s){
