@@ -5,6 +5,9 @@
 #include <string.h>
 
 
+
+
+
 ListPost * loadFilActu(int id_user){
 
 ListPost * list = (ListPost *) initListPost() ;

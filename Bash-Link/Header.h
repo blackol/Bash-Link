@@ -154,7 +154,7 @@ void CONNEXION(){
 
 //    creer une fonction qui récupère id utilisateur.
 
-    // fait (^_^) c'est dans FonctionCustom.h
+    // fait (^_^) !!! ,  c'est dans FonctionCustom.h
     ID = getId(LOGIN) ;
 
 

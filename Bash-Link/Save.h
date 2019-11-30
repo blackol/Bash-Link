@@ -61,6 +61,8 @@ int saveComment(int id_comment , int id_post , int id_writer , char *comment){
     FILE *file = fopen("comment.txt" , "a+") ;
 
     if( file == NULL){return 0 ;}
+    
+    // id1 = id_comment
 
     if(id_comment < 10){ sprintf(id1 ,"00%d" , &id_comment ) ; }
         
@@ -69,7 +71,7 @@ int saveComment(int id_comment , int id_post , int id_writer , char *comment){
     if(id_comment >= 100){ sprintf(id1 ,"%d" , &id_comment ) ; }
         
     
-        
+    // id3 = id_post
     
     if(id_post < 10){ sprintf(id3 ,"00%d" , &id_post ) ; }
         
@@ -79,7 +81,7 @@ int saveComment(int id_comment , int id_post , int id_writer , char *comment){
         
         
         
-        
+     // id2 = id_writer
         
     if(id_writer < 10){ sprintf(id2 ,"00%d" , &id_writer ) ; }
         

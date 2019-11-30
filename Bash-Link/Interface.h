@@ -100,7 +100,8 @@ void affichageselectsupermenupost(){
 // super menu toute les fonction du duper menu son à faire
 
 void AfficherActu(ListPost *list){
-
+    
+    //Aller !! une fonction de plus (^_^)
   
     Post *p = list->tete ;
     int n , continuer = 1 ;
@@ -108,7 +109,7 @@ void AfficherActu(ListPost *list){
     while(continuer){
         
         
-        printf("Navigation\n 1 -> actu suivant\n 2 -> actu précedent\n 3 -> retour \n");
+        printf("Navigation :\n 1 -> actu suivant\n 2 -> actu précedent\n 3 -> retour \n");
                scanf("%d",&n);
                if(n==1){
                 if(p->next) p = p->next;
@@ -126,13 +127,15 @@ void AfficherActu(ListPost *list){
                    
                }else {
                    
-                   printf("Erreur , veuillez saisir un chiffre valide");
+                   printf("Erreur , veuillez saisir un chiffre valide\n ");
                }
     }
 }
 
 
 void AfficherPost(ListPost *list ){
+    
+    //Pour cette fonction c'est encore moi  (^_^)
 
     Post *p = list->tete ;
     int n , continuer = 1 ;
@@ -140,7 +143,7 @@ void AfficherPost(ListPost *list ){
     while(continuer){
         
         
-        printf("Navigation\n 1 -> Post suivant\n 2 -> Post précedent \n 3 -> retour \n");
+        printf("Navigation :\n 1 -> Post suivant\n 2 -> Post précedent \n 3 -> retour \n");
                scanf("%d",&n);
                if(n==1){
                 if(p->next) p = p->next;
@@ -158,13 +161,49 @@ void AfficherPost(ListPost *list ){
                    
                }else {
                    
-                   printf("Erreur , veuillez saisir un chiffre valide");
+                   printf("Erreur , veuillez saisir un chiffre valide\n ");
                }
     }
        
 }
 
-ListPost list;
+
+void afficherUser(ListUser *list){
+    
+    // Poouuuurrrrqqqquuuooooiiiii mooiiii (^_^)
+    
+    User *p = list->tete ;
+    int n , continuer = 1 ;
+    
+    while(continuer){
+    
+    //printf("Navigation :\n 1 -> Voir une Autre Sugestion \n 2 -> Voir la Sugestion précédente \n 3 -> Quiter \n");
+     printf("Résultat:\n 1->Voir un autre résultat \n 2-> Voir le résultat précedent \n 3-> Quiter \n")
+    
+        scanf("%d",&n);
+               if(n==1){
+                if(p->next) p = p->next;
+               printf("Résultat :\n login : %s  \n nom : %s\n prenom : %s \n age : %d ",p->login , p->nom , p->prenom , p->age);
+               
+               } else if(n == 2){
+                   
+                   if(p->last) p = p->last ;
+                  printf("Résultat :\n login : %s  \n nom : %s\n prenom : %s \n age : %d ",p->login , p->nom , p->prenom , p->age);
+               
+               }else if(n ==  3){
+                   
+                   continuer  = 0 ;
+                   
+                   
+               }else {
+                   
+                   printf("Erreur , veuillez saisir un chiffre valide\n ");
+               }
+    }
+    
+    
+    }
+
 
 
 void superMenu(int id){
@@ -182,8 +221,19 @@ void superMenu(int id){
         
     }
     if (choix==2) {
-        printf("Recherche");
-//        chercherUser(char *recherche);
+        printf("Recherche : \n");
+         char recherche[100] ;
+        
+        gets(recherche) ;
+        
+        
+        ListUser *list  = chercherUser(recherche);
+        
+        afficherUser(list) ; 
+        
+        
+        
+        
 //        Editor place
     }
     if (choix==3) {
